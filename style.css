@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: serif;
+}
+
+html {
+    font-size: 62.5%; /* Base font size to make rem units easier to manage */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: blueviolet;
+    color: white;
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: orange;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    gap: 4rem;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+    border-bottom: 3px solid rgb(168, 111, 4);
+}
+
+@media(max-width: 995px) {
+    /* Adjust navigation for smaller screens */
+    nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid orangered;
+        border-bottom: 3px solid orange;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem;
+        background-color: black;
+        border-top: 1rem solid black;
+        display: none; /* Hide nav by default */
+        flex-direction: column; /* Stack nav links vertically */
+    }
+
+    nav.active {
+        display: block; /* Show nav when active */
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        width: 40px;
+        height: 30px;
+        background-color: #fff;
+        position: relative;
+        z-index: 101;
+    }
+
+    .menu-icon svg {
+        width: 100%;
+        height: 100%;
+        fill: white;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+    flex-wrap: wrap; /* Allow content to wrap in smaller screens */
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home .home-content p {
+    font-size: small;
+}
+
+span {
+    color: orange;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid rgb(192, 5, 5);
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+img:hover {
+    border-left: 5px solid rgba(236, 6, 6, 0.873);
+    border-right: 5px solid rgb(238, 21, 50);
+    border-top: 5px solid rgba(217, 17, 70, 0.842);
+    border-bottom: 5px solid rgba(202, 9, 45, 0.896);
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    border: 0.2rem solid orangered;
+    background-color: transparent;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3);
+    background-color: orange;
+    box-shadow: 0 0 25px orange;
+}
+
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span {
+    position: relative;
+    content: "Softer Developer";
+}
+
+#mi {
+    color: white;
+    position: relative;
+    right: 7rem;
+}
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 600px) {
+    /* Adjust for very small screens */
+    header {
+        padding: 1rem 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav a {
+        display: none;
+    }
+
+    .menu-icon {
+        display: inline-block;
+        background-color: red;
+        width: 40px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .home {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .home-img img {
+        width: 50vw;
+    }
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .typing-text {
+        font-size: 28px;
+    }
+}
+
+/* Toggle Navigation Menu when active */
+@media screen and (max-width: 995px) {
+    .menu-icon.active + nav {
+        display: block;
+    }
+}
