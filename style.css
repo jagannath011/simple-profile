@@ -68,6 +68,10 @@ nav a:hover {
 .home-content{
     margin-top: -15vw;
 }
+.home-img img{
+    position: relative;
+    right: -13vw;
+}
 
 @media(max-width: 995px) {
     /* Adjust navigation for smaller screens */
@@ -108,7 +112,7 @@ nav a:hover {
         cursor: pointer;
         width: 40px;
         height: 30px;
-        background-color: #fff;
+        /* background-color: #fff; */
         position: relative;
         z-index: 101;
     }
@@ -160,8 +164,6 @@ span {
 
 .home-img img {
     position: relative;
-    right: -15vw;
-    bottom: -3vw;
     width: 28vw;
     border-radius: 50%;
     box-shadow: 0 0 25px solid rgb(192, 5, 5);
